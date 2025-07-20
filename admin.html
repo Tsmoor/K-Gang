@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Admin – K-Gang Arena</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/dark.css"/>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <section>
+    <h2>تسجيل دخول الإداري</h2>
+    <input id="adminEmail" type="email" placeholder="admin@k-gang.live"/>
+    <input id="adminPass" type="password" placeholder="password"/>
+    <button id="adminLoginBtn">Login</button>
+    <p id="adminMsg"></p>
+  </section>
+
+  <section id="adminControls" style="display:none;">
+    <h2>تحكم KG</h2>
+    <input id="userMail" placeholder="user email"/>
+    <input id="amount" type="number" placeholder="KG amount"/>
+    <button id="addCoinsBtn">Add/Remove</button>
+
+    <h2>إدارة المتجر</h2>
+    <input id="itemName" placeholder="Item Name"/>
+    <input id="itemPrice" type="number" placeholder="Price KG"/>
+    <input id="itemImg" placeholder="Img URL (optional)"/>
+    <button id="addItemBtn">Add Item</button>
+
+    <h2>إيقاف/تفعيل لعبة</h2>
+    <select id="gameSelect"></select>
+    <button id="toggleGameBtn">Toggle</button>
+
+    <h2>إشعار جماعي</h2>
+    <textarea id="globalMsg" placeholder="Message for all users"></textarea>
+    <button id="sendGlobalBtn">Send</button>
+  </section>
+
+  <script type="module" src="js/firebase-config.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
