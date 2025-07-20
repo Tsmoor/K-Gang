@@ -1,14 +1,23 @@
-function route() {
-  const hash = location.hash.slice(1) || "dashboard";
-  document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-  document.getElementById(hash)?.style.display = "block";
-}
-window.addEventListener("hashchange", route);
-window.addEventListener("load", route);
+import { $, LS, toast } from "./utils.js";
 
-// Dark Mode Toggle
-const toggle = document.getElementById("themeToggle");
-toggle.onclick = () => {
-  const dark = document.getElementById("darkSheet");
+// Player
+let player = LS.get("player", { name: "Player", coins: 100, avatars: [], badges: [] });
+const save = () => LS.set("player", player);
+
+// DOM
+$("#playerName").textContent = player.name;
+$("#coins").textContent = player.coins + " KG";
+$("#balance").textContent = player.coins + " KG";
+
+// Navigation
+window.addEventListener("hashchange", () => {
+  $$(".page").forEach((p) => (p.style.display = "none"));
+  $(location.hash || "#dashboard").style.display = "block";
+});
+window.dispatchEvent(new Event("hashchange"));
+
+// Theme
+$("#themeToggle").onclick = () => {
+  const dark = $("#darkSheet");
   dark.disabled = !dark.disabled;
 };
