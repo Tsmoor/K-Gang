@@ -1,0 +1,15 @@
+:root {
+  --bg: #111827;
+  --surface: #1f2937;
+  --text: #f9fafb;
+  --accent: #f97316;
+}
+body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); }
+header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: var(--surface); }
+nav a, #adminLink { margin: 0 .5rem; color: var(--text); text-decoration: none; }
+.page { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 1rem; }
+.card { background: var(--surface); padding: 1rem; border-radius: 8px; cursor: pointer; }
+.btn { padding: .6rem 1.2rem; background: var(--accent); border: none; border-radius: 6px; cursor: pointer; }
+.hidden { display: none; }
+#toast { z-index: 9999; }
